@@ -6,19 +6,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-@Controller
+@Controller //аннотация-наследник от @Component
 public class HelloController {
 
 	@GetMapping(value = "/")
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
+		messages.add("----------------------------------------------");
+		messages.add(new Date().toString());
+		messages.add("----------------------------------------------");
 		messages.add("I'm Spring MVC application");
-		messages.add("5.2.0 version by sep'19 ");
+		messages.add("5.2.0 version by aug'20 ");
+		messages.add("Something else!");
+		messages.add("----------------------------------------------");
+		messages.add(new Date().toString());
+		messages.add("----------------------------------------------");
 		model.addAttribute("messages", messages);
 		return "index";
 	}
+	/*методом может быть несколько в контроллере. Чаще всего - один метод - один URL.
+	И чаще всего метод возвращает String. Название метода может быть любым.*/
 	
 }
