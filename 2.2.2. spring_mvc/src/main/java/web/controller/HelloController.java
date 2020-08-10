@@ -22,9 +22,7 @@ public class HelloController {
 		messages.add("----------------------------------------------");
 		messages.add("I'm Spring MVC application");
 		messages.add("5.2.0 version by aug'20 ");
-		messages.add("Something else!");
-		messages.add("----------------------------------------------");
-		messages.add(new Date().toString());
+		messages.add("Something else");
 		messages.add("----------------------------------------------");
 		model.addAttribute("messages", messages);
 		return "index";

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+
+<body>
+
+<h1 th:text="${tableHeader}"></h1>
+<br/>
+
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Brand</th>
+        <th>Colour</th>
+        <th>Year</th>
+    </tr>
+
+    <tr th:each="car, state : ${listCars}">
+        <td th:utext="${state.count}">No</td>
+        <td th:utext="${car.getBrand()}">Brand</td>
+        <td th:utext="${car.getColour()}">Colour</td>
+        <td th:utext="${car.getYear()}">Year</td>
+    </tr>
+
+</table>
+
+<br/>
+<br/>
+<br/>
+<a href="/">Back to main</a>
+
+</body>
+</html>

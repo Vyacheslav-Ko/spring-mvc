@@ -5,6 +5,9 @@ public class Car {
     private String colour;
     private int year;
 
+    public Car() {
+    }
+
     public Car(String brand, String colour, int year) {
         this.brand = brand;
         this.colour = colour;

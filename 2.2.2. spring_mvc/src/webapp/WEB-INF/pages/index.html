@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-        <!--<h1 th:text="${msg}"/>-->
-    </th:block>
-</div>
+    <div>
+        <th:block th:each="msg : ${messages}">
+            <h1 th:text="${msg}"></h1>
+        </th:block>
+        <br/>
+        <h3><a href="/cars.html?locale=en">Cars</a></h3>
+        <br/>
+        <h3><a href="/cars.html?locale=ru">Машины</a></h3>
+        <br/>
+        <h3><a href="/cars.html">No locale parametr</a></h3>
+    </div>
 </body>
+
 </html>
