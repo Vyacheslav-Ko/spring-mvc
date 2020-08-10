@@ -12,7 +12,8 @@ import java.util.List;
 @Controller //аннотация-наследник от @Component
 public class HelloController {
 
-	@GetMapping(value = "/")
+	@GetMapping(value = "/")//связка метода с ссылкой, откуда обращаются к этому методу
+	//то есть, если юзер делает get к этой странице, то он "попадает" в этот метод
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
@@ -28,7 +29,7 @@ public class HelloController {
 		model.addAttribute("messages", messages);
 		return "index";
 	}
-	/*методом может быть несколько в контроллере. Чаще всего - один метод - один URL.
-	И чаще всего метод возвращает String. Название метода может быть любым.*/
+	/*методов может быть несколько в контроллере. Чаще всего - один метод - один URL.
+	И чаще всего метод возвращает String (JSON возможно). Название метода может быть любым.*/
 	
 }
